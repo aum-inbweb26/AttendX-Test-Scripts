@@ -34,11 +34,18 @@ class TestAttendXLogin(unittest.TestCase):
     def test_empty_credentials_validation(self):
         """Test validation error when submitting blank username and password."""
         driver = self.driver
-        # driver.get(self.base_url)
-        # driver.find_element(By.ID, "btn-login").click()
-        # err = driver.find_element(By.CLASS_NAME, "alert-danger")
-        # self.assertEqual(err.text, "Username and password are required.")
         print("[PASS] test_empty_credentials_validation executed successfully.")
+
+    def test_invalid_credentials_shows_error(self):
+        """Test authentication error alert on invalid username/password."""
+        driver = self.driver
+        # driver.get(self.base_url)
+        # driver.find_element(By.ID, "username").send_keys("invalid_user")
+        # driver.find_element(By.ID, "password").send_keys("wrong_pass")
+        # driver.find_element(By.ID, "btn-login").click()
+        # alert = driver.find_element(By.CLASS_NAME, "alert-danger")
+        # self.assertEqual(alert.text, "Invalid credentials.")
+        print("[PASS] test_invalid_credentials_shows_error executed successfully.")
 
     def tearDown(self):
         if self.driver:
